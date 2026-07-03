@@ -1,9 +1,10 @@
 class Car:
-    def __init__(self, company, model, color, price):
+    def __init__(self, company, model, color, grossprice,):
         self.company = company
         self.model = model
         self.color = color
-        self.price = price
+        self.grossprice = grossprice
+
 
 car1 = Car("Toyota", 2018, "White", 500000000)
 car2 = Car("Colorla", 2015, "Black", 2000000)
