@@ -1,13 +1,31 @@
-class Bank:
-    bank__name = "UBL"
+class School:
+    school_name = "GBPS URDU"
     @classmethod
-    def change_bank(cls,name):
-        cls.bank__name = name
 
-Bank.change_bank("NBP")
+    def change_name(cls, name):
+        cls.school_name = name
 
-print(Bank.bank__name)
+School.change_name("GBPS Majeedia")
 
+print(School.school_name)
+
+# class Bank:
+#     bank__name = "UBL"
+#     @classmethod
+#     def change_bank(cls,name):
+#         cls.bank__name = name
+
+# Bank.change_bank("NBP")
+
+# print(Bank.bank__name)
+
+
+# class StaticVar:
+#     @staticmethod
+#     def add(a, b):
+#         return a * b
+
+# print(StaticVar.add(20,30))
 
 # class Bank:
 
@@ -20,3 +38,4 @@ print(Bank.bank__name)
 # Bank.change_bank("UBL")
 
 # print(Bank.bank_name)
+
