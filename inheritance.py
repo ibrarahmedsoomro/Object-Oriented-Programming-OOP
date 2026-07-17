@@ -1,16 +1,30 @@
-# Inheritance with Super Method
-class Mobiles:
+class Laptops:
     def __init__(self, name):
         self.name = name
 
-class Xiaomi(Mobiles):
-    def __init__(self, name, functionality):
+class Dell(Laptops):
+    def __init__(self, name, specs):
         super().__init__(name)
-        self.functionality = functionality
+        self.specs = specs
 
-laptop = Xiaomi("Redmi", "Turbo")
-print(laptop.name)
-print(laptop.functionality)
+std = Dell("Dell", "Core i5 3rd  Generation")
+print(std.name)
+print(std.specs)
+
+
+# # Inheritance with Super Method
+# class Mobiles:
+#     def __init__(self, name):
+#         self.name = name
+
+# class Xiaomi(Mobiles):
+#     def __init__(self, name, functionality):
+#         super().__init__(name)
+#         self.functionality = functionality
+
+# laptop = Xiaomi("Redmi", "Turbo")
+# print(laptop.name)
+# print(laptop.functionality)
 # class ProProgrammer(Programmer):
 #      pass
 
