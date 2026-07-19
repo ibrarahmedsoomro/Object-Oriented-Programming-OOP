@@ -4,6 +4,8 @@ class Student:
 
 student1 = Student("Ali")
 print(student1._name)
+
+
 # class Car:
 #     def __init__(self, company, model, color, grossprice,):
 #         self.company = company
