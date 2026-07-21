@@ -1,76 +1,84 @@
-class BankAcc:
+class BankAccount:
     def __init__(self, name, pin, balance):
         self.name = name
         self.pin = pin
         self.balance = balance
 
     def login(self):
-        user_pin = input("Enter Your Pin: ")
-        
+        user_pin = input("Enter your PIN: ")
+
         if user_pin == self.pin:
-            print(f"\n Welcome to NBP ATM MACHINE {self.name}!")
+            print(f"\nWelcome {self.name}!")
             self.menu()
         else:
-            print("Invalid Pin")
-    def checkBalance(self):
-        print(f"Your Balance is Rs.{self.balance}")
+            print("Incorrect PIN!")
+
+    def check_balance(self):
+        print(f"Your Balance: Rs. {self.balance}")
 
     def deposit(self):
-        amount = float("Enter your deposit amount:")
+        amount = float(input("Enter deposit amount: "))
 
-        if amount>0:
+        if amount > 0:
             self.balance += amount
-            print("Amount added sucessfuly")
-            self.checkBalance()
+            print("Deposit Successful!")
+            self.check_balance()
         else:
-            print("Please Enter a valid amount")
+            print("Invalid Amount!")
 
     def withdraw(self):
-        amount = float("Enter a amount:")
-        if amount >0:
-            print(f"You balance is deducted")
-            self.balance -= amount
-            self.checkBalance()
-        else:
-            print("Enter a valid balance")
-    
-    def changePin(self):
-        oldpin = input("Enter a Old Pin")
+        amount = float(input("Enter withdraw amount: "))
 
-        if oldpin == self.pin:
-            newpin = input("Enter a new pin")
-            self.pin = newpin
-            print("Pin Created Sucessfully")
+        if amount <= self.balance:
+            self.balance -= amount
+            print("Withdrawal Successful!")
+            self.check_balance()
         else:
-            print("Enter a Correct Pin")
-    
+            print("Insufficient Balance!")
+
+    def change_pin(self):
+        old_pin = input("Enter old PIN: ")
+
+        if old_pin == self.pin:
+            new_pin = input("Enter new PIN: ")
+            self.pin = new_pin
+            print("PIN Changed Successfully!")
+        else:
+            print("Wrong Old PIN!")
+
     def menu(self):
         while True:
-            print("\n======ATM MENU======") 
+            print("\n====== ATM MENU ======")
             print("1. Check Balance")
             print("2. Deposit")
             print("3. Withdraw")
-            print("4. Change Pin")
+            print("4. Change PIN")
             print("5. Exit")
 
-            choice = input("Enter your Choice")
+            choice = input("Enter your choice: ")
 
             if choice == "1":
-                self.checkbalace()
-    
+                self.check_balance()
+
             elif choice == "2":
                 self.deposit()
+
             elif choice == "3":
                 self.withdraw()
+
             elif choice == "4":
-                self.changePin()
+                self.change_pin()
+
             elif choice == "5":
-                print("Thank You for using atm machine")
+                print("Thank you for using our ATM!")
                 break
+
             else:
-                print("Invalid Choice")
+                print("Invalid Choice!")
 
 
-acc = BankAcc("Ibrar", 3322, 32222)
+# Object Creation
+account = BankAccount("Ibrar", "1234", 5000)
 
-acc.login()
+# Start ATM
+account.login()
